@@ -1,0 +1,22 @@
+---
+# tasks file for haproxy
+
+- name: install packages
+  yum:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - tomcat
+  notify: restart tomcat
+
+- name: create tomcat ROOT
+  file:
+    path: /usr/share/tomcat/webapps/ROOT
+    state: directory
+    mode: 0755
+
+- name: install index.html template
+  template:
+    src: index.html.j2
+    dest: /usr/share/tomcat/webapps/ROOT/index.html
+    mode: 0644

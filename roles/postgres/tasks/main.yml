@@ -1,0 +1,21 @@
+---
+# tasks file for postgres
+
+- name: install packages
+  yum:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - postgresql-server
+
+- name: initialise postgres
+  command: postgresql-setup initdb
+  args:
+    creates: /var/lib/pgsql/data/postgresql.conf
+    warn: false
+
+- name: start postgres
+  service:
+    name: postgresql
+    state: started
+    enabled: true

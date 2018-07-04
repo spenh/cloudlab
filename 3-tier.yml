@@ -1,0 +1,36 @@
+---
+
+- name: Deploy 3-tier app
+  hosts: jumpbox
+  roles:
+  - osp-facts
+  gather_facts: true
+  become: true
+
+- name: Run repos roles
+  hosts: all
+  become: yes
+  gather_facts: false
+  roles:
+    - { name: repos }
+
+- name: Run haproxy role
+  hosts: frontends
+  become: yes
+  gather_facts: false
+  roles:
+    - { name: haproxy }
+
+- name: Run tomcat role
+  hosts: apps
+  become: yes
+  gather_facts: false
+  roles:
+    - { name: tomcat }
+
+- name: Run postgres role
+  hosts: appdbs
+  become: yes
+  gather_facts: false
+  roles:
+    - { name: postgres }
