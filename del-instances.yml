@@ -1,0 +1,22 @@
+- hosts: jumpbox
+  tasks:
+##Delete Fronend Instance
+  - name: Delete frontend instance
+    include_role:
+       name: osp-del-instances
+       vars_from: frontend.yaml
+###Delete App1 server
+  - name: Delete app1 instance
+    include_role:
+       name: osp-del-instances
+       vars_from: app1.yaml
+##Delete App2 server
+  - name: Delete app2 instance
+    include_role:
+       name: osp-del-instances
+       vars_from: app2.yaml
+##Delete DB server
+  - name: Delete db instance
+    include_role:
+       name: osp-del-instances
+       vars_from: db.yaml
