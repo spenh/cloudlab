@@ -1,0 +1,22 @@
+---
+
+- name: SMOKING
+  hosts: jumpbox
+  roles:
+  - osp-facts
+  gather_facts: true
+  become: true
+
+- name: Run smoketest
+  hosts: frontends
+  become: yes
+  gather_facts: false
+
+  tasks:
+  - name: Connect to frontend URI
+    uri:
+      url: http://{{ inventory_hostname }}
+      return_content: yes
+    register: output
+
+  - debug: var=output
