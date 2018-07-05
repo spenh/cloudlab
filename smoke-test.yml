@@ -13,13 +13,18 @@
   gather_facts: false
 
   tasks:
+  
+  - name: Wait for frontend to become available
+    wait_for:
+      host: "{{ inventory_hostname }}"
+      port: 80
+      timeout: 600
+
   - name: Connect to frontend URI
     uri:
       url: http://{{ inventory_hostname }}
       return_content: yes
     register: output
-
-  - debug: var=output.content
 
   - name: Fail if output not correct
     fail:
