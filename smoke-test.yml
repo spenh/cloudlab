@@ -1,6 +1,6 @@
 ---
 
-- name: SMOKING
+- name: SMOKE TEST
   hosts: jumpbox
   roles:
   - osp-facts
