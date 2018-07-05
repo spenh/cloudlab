@@ -19,7 +19,7 @@
       return_content: yes
     register: output
 
-  - debug: var=output
+  - debug: var=output.content
 
   - name: Fail if output not correct
     fail:
