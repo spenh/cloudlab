@@ -54,5 +54,6 @@
       return_content: yes
     register: output
 
-  - debug: var=output
-
+  - name: Fail if output not correct
+    fail:
+    when: "'Ansible has done its job' not in output"
