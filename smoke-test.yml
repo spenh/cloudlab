@@ -23,4 +23,4 @@
 
   - name: Fail if output not correct
     fail:
-    when: "'Ansible has done its job' not in output"
+    when: "'Ansible has done its job' not in output.content"
