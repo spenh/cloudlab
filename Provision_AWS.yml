@@ -25,3 +25,16 @@
       - { url: "{{ baseurl }}/common.sh",    dest: "{{ scriptdir }}" }
       - { url: "{{ baseurl }}/order_svc.sh", dest: "{{ scriptdir }}" }
       - { url: "{{ baseurl }}/jq-linux64",   dest: "{{ bindir }}/jq" }
+
+  - name: Run provision script
+    shell: |
+      export PATH={{ scriptdir }}:{{ bindir }}:$PATH
+      export username={{ my_user }}
+      export password={{ my_password }}
+      export uri={{ my_uri }}
+      ./order_svc.sh -y -c 'OPENTLC Automation' -i 'Three Tier Application' -t 1
+      touch {{ scriptdir }}/PROVISION-AWS-DONE
+    args:
+      executable: /bin/bash
+      chdir: "{{ scriptdir }}"
+      creates: "{{ scriptdir }}/PROVISION-AWS-DONE"
