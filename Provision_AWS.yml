@@ -1,0 +1,27 @@
+---
+
+- name: Provision AWS
+  hosts: bastion
+  become: true
+  gather_facts: false
+  vars:
+    scriptdir: /root/aws
+    bindir: "{{ scriptdir }}/bin"
+    baseurl: http://www.opentlc.com/download/ansible_bootcamp/scripts
+
+  tasks:
+  - name: Create directory
+    file:
+      path: "{{ bindir }}"
+      state: directory
+      mode: 0755
+
+  - name: Get scripts
+    get_url:
+      url: "{{ item.url }}"
+      dest: "{{ item.dest }}"
+      mode: 0755
+    with_items:
+      - { url: "{{ baseurl }}/common.sh",    dest: "{{ scriptdir }}" }
+      - { url: "{{ baseurl }}/order_svc.sh", dest: "{{ scriptdir }}" }
+      - { url: "{{ baseurl }}/jq-linux64",   dest: "{{ bindir }}/jq" }
