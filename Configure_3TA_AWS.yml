@@ -1,7 +1,7 @@
 ---
 
 - name: Run repos roles
-  hosts: all
+  hosts: tag_AnsibleGroup_frontends:tag_AnsibleGroup_apps:tag_AnsibleGroup_appdbs
   become: yes
   gather_facts: false
   roles:
