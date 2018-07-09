@@ -1,0 +1,24 @@
+---
+
+- name: Run smoketest
+  hosts: tag_AnsibleGroup_frontends
+  become: yes
+  gather_facts: false
+
+  tasks:
+  
+  - name: Wait for frontend to become available
+    wait_for:
+      host: "{{ inventory_hostname }}"
+      port: 80
+      timeout: 600
+
+  - name: Connect to frontend URI
+    uri:
+      url: http://{{ inventory_hostname }}
+      return_content: yes
+    register: output
+
+  - name: Fail if output not correct
+    fail:
+    when: "'Ansible has done its job' not in output.content"
