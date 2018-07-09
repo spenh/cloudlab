@@ -8,7 +8,7 @@
   become: true
 
 - name: Run repos roles
-  hosts: all
+  hosts: frontends:apps:appdbs
   become: yes
   gather_facts: false
   roles:
