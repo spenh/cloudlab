@@ -8,22 +8,23 @@
     - { name: repos }
 
 - name: Run haproxy role
-  hosts: frontends
+  hosts: tag_AnsibleGroup_frontends
   become: yes
   gather_facts: false
   roles:
     - { name: haproxy }
 
 - name: Run tomcat role
-  hosts: apps
+  hosts: tag_AnsibleGroup_apps
   become: yes
   gather_facts: false
   roles:
     - { name: tomcat }
 
 - name: Run postgres role
-  hosts: appdbs
+  hosts: tag_AnsibleGroup_appdbs
   become: yes
   gather_facts: false
   roles:
     - { name: postgres }
+
