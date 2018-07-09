@@ -1,5 +1,6 @@
 ---
 - hosts: tag_instance_filter_three_tier_app_spencer_harvey_spark_co_nz
+  become: true
   gather_facts: false
   tasks:
   - name: Check the instances status
