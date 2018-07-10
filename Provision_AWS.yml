@@ -33,8 +33,10 @@
       export password={{ my_password }}
       export uri={{ my_uri }}
       ./order_svc.sh -y -c 'OPENTLC Automation' -i 'Three Tier Application' -t 1
-      touch {{ scriptdir }}/PROVISION-AWS-DONE
     args:
       executable: /bin/bash
       chdir: "{{ scriptdir }}"
-      creates: "{{ scriptdir }}/PROVISION-AWS-DONE"
+
+  - name: Pause 15 minutes while AWS builds
+    shell: |
+      sleep 900
