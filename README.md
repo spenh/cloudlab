@@ -10,7 +10,9 @@
 
 ## Playbooks and roles
 ### Playbooks
+
 ####Check_AWS_instances.yml
+
 ####Configure_3TA_AWS.yml
 ####Configure_3TA_OSP.yml
 ####Provision_AWS.yml
