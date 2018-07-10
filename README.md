@@ -8,7 +8,35 @@
 2. Configure HA Ansible Tower.
 3. Create a github.com account to pull Ansible projects from.
 
-## Run Workflow
+## Playbooks and roles
+### Playbooks
+####Check_AWS_instances.yml
+####Configure_3TA_AWS.yml
+####Configure_3TA_OSP.yml
+####Provision_AWS.yml
+####Provision_OSP.yml
+####add_aws_key.yml	
+####cleanup_OSP.yml	
+####smoke-test-aws.yml
+####smoke-test.yml
+
+### Roles
+
+####haproxy
+####osp-del-instances
+####osp-facts
+####osp-flavor
+####osp-instances
+####osp-keypair
+####osp-network
+####osp-securitygroup
+####osp-workstation
+####postgres
+####repos
+####tomcat
+
+
+## Tower Workflow
 
 Run the "Deploy 3-Tier Workflow" from [Ansible Tower](https://tower1.28dc.example.opentlc.com/).
 
