@@ -35,3 +35,10 @@
       tower_password: r3dh4t1!
       ssh_key_data: "/root/.ssh/{{ file_to_copy.stdout }}"
       username: ec2-user
+
+  - name: Associate AWS tags as children to apps group
+    command: |
+      tower-cli config host tower1.28dc.example.opentlc.com
+      tower-cli config username admin
+      tower-cli config password r3dh4t1!
+      tower-cli group associate --group tag_AnsibleGroup_apps --parent apps --inventory "AWS inventory"
