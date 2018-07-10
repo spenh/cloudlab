@@ -8,32 +8,6 @@
 2. Configure HA Ansible Tower.
 3. Create a github.com account to pull Ansible projects from.
 
-## Playbooks and roles
-### Playbooks
-#### Check_AWS_instances.yml
-#### Configure_3TA_AWS.yml
-#### Configure_3TA_OSP.yml
-#### Provision_AWS.yml
-#### Provision_OSP.yml
-#### add_aws_key.yml	
-#### cleanup_OSP.yml	
-#### smoke-test-aws.yml
-#### smoke-test.yml
-
-### Roles
-#### haproxy
-#### osp-del-instances
-#### osp-facts
-#### osp-flavor
-#### osp-instances
-#### osp-keypair
-#### osp-network
-#### osp-securitygroup
-#### osp-workstation
-#### postgres
-#### repos
-#### tomcat
-
 
 ## Tower Workflow
 
@@ -55,3 +29,29 @@ This workflow performs the following steps:
    2. Configure 3 Tier AWS application (Configure_3TA_AWS.yml).
    3. Run smoke test (smoke-test-aws.yml).
 5. Delete OSP instances if development (OSP) environment was unsuccessful (cleanup_OSP.yml).
+
+## Playbooks and roles
+### Playbooks
+#### Provision_AWS.yml
+#### add_aws_key.yml
+#### Provision_OSP.yml
+#### Check_AWS_instances.yml
+#### Configure_3TA_AWS.yml
+#### Configure_3TA_OSP.yml
+#### cleanup_OSP.yml
+#### smoke-test-aws.yml
+#### smoke-test.yml
+
+### Roles
+#### haproxy
+Installs and configures haproxy.
+#### osp-del-instances
+Deletes OSP instances.
+#### osp-facts
+Creates dynamic inventory for OSP.
+#### postgres
+Installs Postgres.
+#### repos
+Deploys a yum repo config file.
+#### tomcat
+Installs Tomcat.
