@@ -37,7 +37,7 @@
       username: ec2-user
 
   - name: Associate AWS tags as children to apps group
-    command: |
+    shell: |
       tower-cli config host tower1.28dc.example.opentlc.com
       tower-cli config username admin
       tower-cli config password r3dh4t1!
