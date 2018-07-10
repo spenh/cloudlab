@@ -32,26 +32,26 @@ This workflow performs the following steps:
 
 ## Playbooks and roles
 ### Playbooks
-#### Provision_AWS.yml
-#### add_aws_key.yml
-#### Provision_OSP.yml
-#### Check_AWS_instances.yml
-#### Configure_3TA_AWS.yml
-#### Configure_3TA_OSP.yml
-#### cleanup_OSP.yml
-#### smoke-test-aws.yml
-#### smoke-test.yml
+* Provision_AWS.yml
+* add_aws_key.yml
+* Provision_OSP.yml
+* Check_AWS_instances.yml
+* Configure_3TA_AWS.yml
+* Configure_3TA_OSP.yml
+* cleanup_OSP.yml
+* smoke-test-aws.yml
+* smoke-test.yml
 
 ### Roles
-#### haproxy
-Installs and configures haproxy.
-#### osp-del-instances
-Deletes OSP instances.
-#### osp-facts
-Creates dynamic inventory for OSP.
-#### postgres
-Installs Postgres.
-#### repos
-Deploys a yum repo config file.
-#### tomcat
-Installs Tomcat.
+* haproxy
+  Installs and configures haproxy.
+* osp-del-instances
+  Deletes OSP instances.
+* osp-facts
+  Creates dynamic inventory for OSP.
+* postgres
+  Installs Postgres.
+* repos
+  Deploys a yum repo config file.
+* tomcat
+  Installs Tomcat.
