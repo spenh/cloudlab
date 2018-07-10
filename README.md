@@ -10,32 +10,29 @@
 
 ## Playbooks and roles
 ### Playbooks
-
-####Check_AWS_instances.yml
-
-####Configure_3TA_AWS.yml
-####Configure_3TA_OSP.yml
-####Provision_AWS.yml
-####Provision_OSP.yml
-####add_aws_key.yml	
-####cleanup_OSP.yml	
-####smoke-test-aws.yml
-####smoke-test.yml
+#### Check_AWS_instances.yml
+#### Configure_3TA_AWS.yml
+#### Configure_3TA_OSP.yml
+#### Provision_AWS.yml
+#### Provision_OSP.yml
+#### add_aws_key.yml	
+#### cleanup_OSP.yml	
+#### smoke-test-aws.yml
+#### smoke-test.yml
 
 ### Roles
-
-####haproxy
-####osp-del-instances
-####osp-facts
-####osp-flavor
-####osp-instances
-####osp-keypair
-####osp-network
-####osp-securitygroup
-####osp-workstation
-####postgres
-####repos
-####tomcat
+#### haproxy
+#### osp-del-instances
+#### osp-facts
+#### osp-flavor
+#### osp-instances
+#### osp-keypair
+#### osp-network
+#### osp-securitygroup
+#### osp-workstation
+#### postgres
+#### repos
+#### tomcat
 
 
 ## Tower Workflow
