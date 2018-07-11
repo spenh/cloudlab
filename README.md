@@ -52,6 +52,6 @@ This workflow performs the following steps:
 * postgres
   Installs Postgres.
 * repos
-  Deploys a yum repo config file.
+  Deploys a yum repo config file that is encrypted with ansible-vault.
 * tomcat
   Installs Tomcat.
